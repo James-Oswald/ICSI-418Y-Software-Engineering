@@ -1,0 +1,46 @@
+include includes/header.pug
+
+script(src="js/currency.js")
+script(src="js/makeSearch.js")
+script(src="js/userCode.js")
+script(src="js/displayData.js")
+
+div(class="container-block no-padding" id='searchContainer')
+    div(class="row" id='row')
+        div(class="twelve col")
+            div(class="col-container" id="searchColContainer")
+                div(class="form" id="searchbar")
+                    h1(class="header" style="color: #fff; font-weight: 500") Search Hotels
+                        div(class="header-icon search-icon") 
+                    input(type="text" style="background: #fff" placeholder="Boston, MA" class="form" id="searchInput")
+                    input(type="text" placeholder="11/3/2020-11/9/2020" class="form" id="dates" style="font-size: 1.25em; padding: 28px 20px; background: #fff;")
+                    input(type="text" placeholder="Beds" class="form" id="beds" style="font-size: 1.25em; padding: 28px 20px; background: #fff;")
+                    button(id="searchBtn" class="search" onclick="runSearch()") Search Hotels
+<div id="resultGroup">
+    div(class='container no-padding max-width' style="position: relative")
+        button(class="search" id='searchBack' onclick="revAnimate()") Back to search
+        //button(class="search" id='numResults') Filter
+    div(class='container no-padding max-width')
+        div(class='row' id="searchResults")
+    div(id='listing-lightbox')
+        img(id='listing-lightbox-img' src="views/includes/imgs/beach2.png")
+        div(id="lb-fav" onclick="lbFavorite()")
+        div(id="lb-exit-btn" onclick="lbAnimate()")
+            p(class="paragraph" id="lb-exit-p") x
+        div(class="col-container" stlye="background: #")
+            h1(class='subheader' id="lb-name")
+            h1(class='subheader' id="lb-addr")
+            h1(class='subheader' id="lb-price")
+            select#currency(onchange="CC()")
+                option(value="USD") USD
+                option(value="Euro") Euro
+                option(value="Yen") Yen
+                option(value="Pound") Pound
+            //h1(class='subheader' id="lb-rating") 
+            h1(class='subheader' id="lb-stars") 
+            //h1(class='subheader' id="lb-phone")
+            p(class="paragraph" id='lb-desc-title') Ameninties
+            p(class="paragraph" id='lb-desc')
+            a(id="lb-goto" href="" target="_blank")
+                button(class="search" onclick="") Click Here to Book!
+    div(id='listing-lightbox-exit' onclick="lbAnimate()")

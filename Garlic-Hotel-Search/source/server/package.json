@@ -1,0 +1,25 @@
+{
+  "name": "garlicbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "sass": "node-sass --watch ../client/scss/ -o ../client/views/includes/css/",
+    "start": "concurrently \"npm run sass\" \"nodemon server.js\""
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "concurrently": "^5.3.0",
+    "currency-converter-lt": "^1.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "node-sass": "^5.0.0",
+    "pug": "^3.0.0",
+    "sync-mysql": "^3.0.1"
+  }
+}

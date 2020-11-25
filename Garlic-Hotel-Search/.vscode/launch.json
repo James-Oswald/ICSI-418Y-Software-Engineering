@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "Launch Application",
+            "configurations": ["Launch Server", "Launch localhost"]
+        }
+    ],
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "console": "externalTerminal",
+            "name": "Launch Server",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\source\\server\\server.js",
+        },
+        {
+            "name": "Launch localhost",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8080/",
+            "webRoot": "${workspaceFolder}/source/client"
+        }
+    ]
+}

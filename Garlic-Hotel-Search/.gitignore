@@ -1,0 +1,4 @@
+source/server/node_modules
+source/server/package-lock.json
+source/server/databaseCredentials.json
+source/client/debug.log

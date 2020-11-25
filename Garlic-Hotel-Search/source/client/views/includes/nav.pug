@@ -1,0 +1,30 @@
+div(id="nav")
+    div(class="container display-block")
+        div(class="nav-logo")
+        h1(class="nav-title") Garlic Hotels
+        div(id="menu")
+            div(class="menu-item menu-title")
+                div(class="menu-title-profilePic")
+                h1(class="menu-title-header")
+            a(href="/" class="menu-item-link")
+                div(class="menu-item")
+                    p(class="menu-item-link-p") Home
+            if user
+                a(href="/settings" class="menu-item-link")
+                    div(class="menu-item")
+                        p(class="menu-item-link-p") Settings
+                a(href="/logout" class="menu-item-link")
+                    div(class="menu-item")
+                        p(class="menu-item-link-p") Logout
+            else
+                a(href="/loginregister" class="menu-item-link")
+                    div(class="menu-item")
+                        p(class="menu-item-link-p") Login/Register
+        div(class="nav-hamburger" id="hamburger" onclick="hamburger()")
+            div(class="nav-hamburger-wrapper")
+                div(class="nav-hamburger-line-top")
+                div(class="nav-hamburger-line-mid")
+                div(class="nav-hamburger-line-btm")
+        div(class="nav-user")
+            div(class="nav-user-icon")
+        script(src="../../../js/hamburger.js")

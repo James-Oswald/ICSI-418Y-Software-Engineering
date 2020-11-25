@@ -1,0 +1,36 @@
+include includes/header.pug
+
+div(class="container no-padding")
+    div(class="row")
+        div(class="twelve col")
+            div(class="col-container" style="background: none")
+                div(class="form")
+                    div(id="registerForm")
+                        h1(class="loginRegister") Register |&nbsp;
+                            span(onclick="loginRegisterSwitch()" id="loginSwitch") Login
+                        label(for="email") Email
+                        input(class="form" type="email" name="email" id="email")
+                        label(for="user") Username
+                        input(class="form" type='text' name="user" id="user")
+                        label(for="phone") Phone Number
+                        input(class="form" type='text' name="phone" id="phone")
+                        label(for="pw") Password
+                        input(class="form" type="password" name="pw" id="pw")
+                        label(for="pwCheck") Enter Password Again
+                        input(class="form" type="password" name="pwCheck" id="pwCheck")
+                        button(class="form" onclick="newUser()") Register
+                        div#errorBoxRegister
+                            p(id="errorBoxRegisterText" class="paragraph")
+                    div(id="loginForm")
+                        h1(class="loginRegister") 
+                            span(onclick="loginRegisterSwitch()" id="loginSwitch") Register |&nbsp;
+                            span Login
+                        label(for="user") Username
+                        input(class="form" type='text' name="userLogin" id="userLogin")
+                        label(for="pw") Password
+                        input(class="form" type='password' name="pwLogin" id="pwLogin")
+                        button(class="form" onclick="userLogin()") Login
+                        div#errorBoxLogin 
+                            p(id="errorBoxLoginText" class="paragraph")
+script(src="../../../js/loginregister.js")
+script(src="../../../js/userCode.js")

@@ -1,0 +1,229 @@
+// COLORS
+$green: #7ad68d;
+$darkBg: #22222c;
+$lightBg: #e3e3e3;
+$navBg: #282a36;
+$darkblue: #111116;
+$lightblue: #070708;
+$pcolor: #d0d0d0;
+
+// BREAKPOINTS
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// navheight
+$navHeight: 85px;
+
+// HAMBURGER
+.nav-hamburger {
+  height: $navHeight;
+  position: relative;
+  z-index: 1000000;
+  float: right;
+}
+
+.nav-hamburger-wrapper {
+  height: $navHeight * 0.5;
+  width: 34px;
+  position: relative;
+  top: 50%;
+  margin-left: auto;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.nav-hamburger-line-top {
+  height: 2px;
+  width: 100%;
+  border-radius: 6px;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -10px;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+    background 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-hamburger-line-mid {
+  height: 2px;
+  width: 100%;
+  border-radius: 6px;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-hamburger-line-btm {
+  height: 2px;
+  width: 100%;
+  border-radius: 6px;
+  position: absolute;
+  background: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 10px;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+    background 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hamburger-top-active {
+  transform: rotateZ(45deg);
+  top: 29.5px;
+  background: $green;
+}
+
+.hamburger-mid-active {
+  opacity: 0 !important;
+}
+
+.hamburger-btm-active {
+  transform: rotateZ(-45deg);
+  top: 9px;
+  background: $green;
+}
+
+// MENU
+$menuWidth: 320px;
+
+#menu {
+  background: #0d0d11;
+  height: 100vh;
+  width: $menuWidth;
+  position: fixed;
+  z-index: 5000;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+    right 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  right: -$menuWidth;
+}
+
+.menu-active {
+  opacity: 1 !important;
+  pointer-events: all !important;
+  right: 0 !important;
+}
+
+$menuItemHeight: 60px;
+
+.menu-item {
+  height: $menuItemHeight;
+  padding: 0 30px;
+  box-sizing: border-box;
+  background: #14141b;
+}
+
+.menu-title {
+  height: $navHeight;
+  position: relative;
+  background: #0d0d11;
+}
+
+h1.menu-title-header {
+  line-height: $navHeight;
+  font-weight: 500;
+  color: #fff;
+  font-size: 1.7em;
+  user-select: none;
+}
+
+a.menu-item-link {
+  color: #afafbf;
+  font-size: 1.4em;
+  line-height: $menuItemHeight;
+  letter-spacing: 1px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+
+a.menu-item-link p {
+  left: 0;
+  position: relative;
+  transition: left 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+    color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+a.menu-item-link:hover p {
+  color: $green;
+  left: 5px;
+}
+
+a.menu-item-link:hover .menu-item {
+  background: #17171f;
+}
+
+p#logout {
+  color: #838391;
+}
+
+p#logout:hover {
+  color: $green;
+}
+
+p#register {}
+
+p#logout:hover {
+  color: #fff !important;
+}
+
+.menu-title-profilePic {
+  height: 40px;
+  width: 40px;
+  background: url("../imgs/ph-profile-picDARK.png") no-repeat;
+  background-position: center;
+  background-size: 65%;
+  background-color: #fff;
+  float: left;
+  margin-top: 22px;
+  border-radius: 50%;
+  margin-right: 13px;
+}
+
+@media only screen and (max-width: $sm) {
+  $menuWidth: 100vw;
+
+  #menu {
+    width: $menuWidth;
+  }
+
+  .menu-item {
+    height: 80px;
+    padding: 0 23px;
+    box-sizing: border-box;
+  }
+
+  h1.menu-title-header {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  a.menu-item-link {
+    text-align: center;
+    font-size: 1.6em;
+  }
+
+  a.menu-item-link p {
+    line-height: 80px;
+  }
+
+  a.menu-item-link:hover {
+    color: $green;
+    left: 0;
+  }
+
+  .menu-title-profilePic {
+    margin-right: 0px;
+  }
+}

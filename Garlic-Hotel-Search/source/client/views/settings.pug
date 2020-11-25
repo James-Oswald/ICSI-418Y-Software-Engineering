@@ -1,0 +1,28 @@
+include includes/header.pug
+
+div(class="container no-padding max-width")
+    div.row
+        div(class='six col')
+            div(class='col-container' style="background: none")
+                h1(class='subheader') Change Password
+                label Password
+                input(type='password' id="pw" class='form')
+                label Password Check
+                input(type='password' id="pwCheck" class='form')
+                button(class="search" id="update" style="width: 100%" onclick="changePassword()") Change Password
+        div(class='six col')
+            div(class='col-container' style="background: none")
+                h1(class='subheader') User Settings
+                label Email
+                input(type='text' class='form' id="email" value=`${user.email}`)
+                label Phone
+                input(type='text' class='form' id="phone" value=`${user.phone}`)
+                button(class="search" id="update" style="width: 100%" onclick="userUpdate()") Update
+        div(class='twelve col')
+            div(class='col-container' style="background: none")
+                h1.header Favorites:
+                -for(let i = 0; i < favs.length; i++)
+                    div.fav-wrapper
+                        h1(id=`fav${i}` class="subheader" style="")= favs[i].hotel_id 
+                        button(id=`favb${i}` onclick=`delFavorite('fav${i}', 'favb${i}')` style="background: red; border: none; outline: none; padding: 3px 12px; font-weight: 700; color: #fff; margin-top: 0px; margin-left: 0px; text-transform: uppercase; font-family: 'Poppins'; cursor: pointer; margin-bottom: 12px;") Delete
+        script(src="../../../js/userCode.js")
