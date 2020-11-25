@@ -1,0 +1,13 @@
+extends layout
+
+block pageScripts
+    script(src="/javascripts/login.js")
+
+block pageContent
+    .form-group
+        label(for='username') Username
+        input#username.form-control(type='text' placeholder='Enter Username')
+    .form-group
+        label(for='password') Password
+        input#password.form-control(type='password' placeholder='Enter Password')
+    button.btn.btn-primary(onclick="login()") Login

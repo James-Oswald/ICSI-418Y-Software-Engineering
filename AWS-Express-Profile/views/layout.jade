@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src="/javascripts/jquery-3.5.1.min.js")
+    script(src="/javascripts/bootstrap.min.js")
+    script(src="/javascripts/navbar.js")
+    block pageScripts
+  body
+    nav.navbar.navbar-inverse(style="height:70px")
+      a.navbar-brand(href='/')
+        img(src='/images/j.png', style="width:40px;")
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='/') James Oswald's Profile
+        ul.nav.navbar-nav
+          li
+            a(href='/') Home
+          - if(!loggedIn)
+            li
+              a(href='/login') Login
+          - if(loggedIn)
+            li
+              a(href='/edit') Edit
+          - if(loggedIn)
+            li
+              a(onclick="logout()") Log Out
+    #content
+      #alerts
+      block pageContent

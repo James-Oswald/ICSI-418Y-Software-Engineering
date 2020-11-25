@@ -1,0 +1,17 @@
+extends layout
+
+block pageContent
+  form(action='/updateEndpoint', method="post", enctype="multipart/form-data")
+    .form-group
+        label(for='profile') New Profile Picture
+        input#profile.form-control-file(type='file', name="profile")
+    .form-group
+        label(for='username') New Username
+        input#username.form-control(type='text' name="username" placeholder='Enter New Username')
+    //-.form-group
+        label(for='password') New Password
+        input#password.form-control(type='text' name="password" placeholder='Enter New Password')
+    .form-group
+        label(for='description') New Description
+        input#description.form-control(type='text' name="description" placeholder='Enter New Description')
+    button.btn.btn-primary(type='submit') Submit
